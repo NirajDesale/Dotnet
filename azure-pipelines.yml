@@ -1,0 +1,54 @@
+# ASP.NET Core (.NET Framework)
+# Build and test ASP.NET Core projects targeting the full .NET Framework.
+# Add steps that publish symbols, save build artifacts, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+- main
+ 
+pool:
+  vmImage: 'ubuntu-latest'
+ 
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+ 
+steps:
+- task: UseDotNet@2
+  displayName: Install .NET 6
+  inputs:
+    packageType: 'sdk'
+    version: '6.x'
+ 
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+ 
+- task: DotNetCoreCLI@2
+  displayName: 'Running Unit tests'
+  inputs:
+    command: test
+    projects: '**/webTest.csproj'
+    arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./MyCoverage/'
+    publishTestResults: true
+ 
+- task: PublishCodeCoverageResults@2
+  displayName: 'Publish Code Coverage Results'
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '$(Build.SourcesDirectory)/**/MyCoverage/coverage.cobertura.xml'
+ 
+- script: |
+        threshold=80
+        lineCoverage=$(awk '/<line-rate>/{gsub(/<\/?line-rate>/,"",$1); print int($1*100)}' $(Build.SourcesDirectory)/**/MyCoverage/coverage.cobertura.xml)
+        if [ $lineCoverage -lt $threshold ]; then
+          echo "Line coverage is below the threshold of $threshold%"
+          exit 1
+        else
+          echo "Line coverage meets the threshold of $threshold%"
+        fi
+  displayName: 'Check Code Coverage Threshold'
