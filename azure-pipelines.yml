@@ -8,6 +8,7 @@ trigger:
  
 pool:
   vmImage: 'ubuntu-latest'
+
  
 variables:
   solution: '**/*.sln'
@@ -32,7 +33,7 @@ steps:
   displayName: 'Running Unit tests'
   inputs:
     command: test
-    projects: '**/webtest.csproj'
+    projects: '**/webTest.csproj'
     arguments: '/p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=./MyCoverage/'
     publishTestResults: true
  
