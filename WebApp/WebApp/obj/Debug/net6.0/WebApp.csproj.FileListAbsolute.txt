@@ -50,3 +50,5 @@ D:\Docker\Dotnet\WebApp\WebApp\obj\Debug\net6.0\refint\WebApp.dll
 D:\Docker\Dotnet\WebApp\WebApp\obj\Debug\net6.0\WebApp.pdb
 D:\Docker\Dotnet\WebApp\WebApp\obj\Debug\net6.0\WebApp.genruntimeconfig.cache
 D:\Docker\Dotnet\WebApp\WebApp\obj\Debug\net6.0\ref\WebApp.dll
+D:\Docker\Dotnet\WebApp\WebApp\bin\Debug\net6.0\appsettings.Production.json
+D:\Docker\Dotnet\WebApp\WebApp\bin\Debug\net6.0\appsettings.Staging.json

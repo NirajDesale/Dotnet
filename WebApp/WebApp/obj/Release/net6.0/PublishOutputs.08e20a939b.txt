@@ -1,0 +1,9 @@
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\WebApp.exe
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\appsettings.Production.json
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\appsettings.Staging.json
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\WebApp.dll
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\WebApp.deps.json
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\WebApp.runtimeconfig.json
+D:\Docker\Dotnet\WebApp\WebApp\obj\Release\net6.0\PubTmp\Out\WebApp.pdb
