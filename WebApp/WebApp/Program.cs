@@ -5,6 +5,9 @@ builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
+ var password =  "https://cdb-ing-blt-dev-nosql.documents.azure.com:443/";
+ var password1 = "H1Ndaslp6JTOms6MvlzOtQkN4k5SzvUlfm2vlxT7SvKEltm87QnzTYjQNWu8PW0DP1gB5RI0DFttACDbVlG96g==";
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
